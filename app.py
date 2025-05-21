@@ -12,7 +12,6 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import AgglomerativeClustering
 
 st.set_page_config(layout="wide", page_title="Customer Personality Analysis")
-
 st.title("Customer Personality Analysis")
 
 st.sidebar.header("About Dataset")
@@ -27,13 +26,12 @@ def load_data():
         df = pd.read_csv("Customer_Segmentation_Dataset.csv")
         return df
     except:
-        st.error("Please upload Customer_Segmentation_Dataset.csv file or make sure it's in the current directory")
+        st.error("Please Upload the Dataset")
         st.stop()
         return None
 
 def main():
     df = load_data()
-    
     tabs = st.tabs(["Data Overview", "Data Preparation", "Univariate Analysis", "Bivariate Analysis", "Clustering"])
     
     with tabs[0]:
